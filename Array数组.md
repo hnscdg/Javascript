@@ -326,82 +326,82 @@
 
 ### 冒泡排序：即实现数组由小到大进行排序；思路为：每次比较相邻的两个数，如果后一个比前一个小，换位置。如果要实现由大到小排序，使用reverse()即可
 
-    ``` javascript
-    var arr = [3, 1, 4, 6, 5, 7, 2];
+``` javascript
+var arr = [3, 1, 4, 6, 5, 7, 2];
 
-    function bubbleSort(arr) {
-        var len = arr.length;
-        for (var i = len; i >= 2; --i) {
-            for (var j = 0; j < i - 1; j++) {
-                if (arr[j + 1] < arr[j]) {
-                    var temp;
-                    temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
+function bubbleSort(arr) {
+    var len = arr.length;
+    for (var i = len; i >= 2; --i) {
+        for (var j = 0; j < i - 1; j++) {
+            if (arr[j + 1] < arr[j]) {
+                var temp;
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
         }
-        return arr;
     }
+    return arr;
+}
 
-    var arr2 = bubbleSort(arr); 
-    console.log(arr2);  // [1, 2, 3, 4, 5, 6, 7]
-    var arr3 = arr2.reverse();
-    console.log(arr3);  //  [7, 6, 5, 4, 3, 2, 1]
-    ```
+var arr2 = bubbleSort(arr); 
+console.log(arr2);  // [1, 2, 3, 4, 5, 6, 7]
+var arr3 = arr2.reverse();
+console.log(arr3);  //  [7, 6, 5, 4, 3, 2, 1]
+```
 
 ### 快速排序：思路：采用二分法，取出中间数，数组每次和中间数比较，小的放到左边，大的放到右边。
 
-    ``` javascript
-    var arr = [3, 1, 4, 6, 5, 7, 2];
-    function quickSort(arr) {
-        if(arr.length == 0) {
-            return [];  // 返回空数组
-        }
-        var cIndex = Math.floor(arr.length / 2);
-        var c = arr.splice(cIndex, 1);
-        var l = [];
-        var r = [];
-
-        for (var i = 0; i < arr.length; i++) {
-            if(arr[i] < c) {
-                l.push(arr[i]);
-            } else {
-                r.push(arr[i]);
-            }
-        }
-        return quickSort(l).concat(c, quickSort(r));
+``` javascript
+var arr = [3, 1, 4, 6, 5, 7, 2];
+function quickSort(arr) {
+    if(arr.length == 0) {
+        return [];  // 返回空数组
     }
-    console.log(quickSort(arr));
-    //[1, 2, 3, 4, 5, 6, 7]
-    ```
+    var cIndex = Math.floor(arr.length / 2);
+    var c = arr.splice(cIndex, 1);
+    var l = [];
+    var r = [];
+
+    for (var i = 0; i < arr.length; i++) {
+        if(arr[i] < c) {
+            l.push(arr[i]);
+        } else {
+            r.push(arr[i]);
+        }
+    }
+    return quickSort(l).concat(c, quickSort(r));
+}
+console.log(quickSort(arr));
+//[1, 2, 3, 4, 5, 6, 7]
+```
 
 ## 数组的翻转（非reverse()）
 
 ### 方法一
 
-    ``` javascript
-    var arr = [1,2,3,4];
-    var arr2 = [];
-    while(arr.length) {
-        var num = arr.pop(); //删除数组最后一个元素并返回被删除的元素
-        arr2.push(num);
-    }
-    console.log(arr2);
-    // [4, 3, 2, 1]
-    ```
+``` javascript
+var arr = [1,2,3,4];
+var arr2 = [];
+while(arr.length) {
+    var num = arr.pop(); //删除数组最后一个元素并返回被删除的元素
+    arr2.push(num);
+}
+console.log(arr2);
+// [4, 3, 2, 1]
+```
 
 ### 方法二
 
-    ``` javascript
-    var arr = [1,2,3,4];
-    var arr2 = [];
-    while(arr.length){
-        var num = arr.shift(); //删除数组第一个元素并返回被删除的元素
-        arr2.unshift(num);
-    }
-    console.log(arr2);
-    ```
+``` javascript
+var arr = [1,2,3,4];
+var arr2 = [];
+while(arr.length){
+    var num = arr.shift(); //删除数组第一个元素并返回被删除的元素
+    arr2.unshift(num);
+}
+console.log(arr2);
+```
 
 
 
