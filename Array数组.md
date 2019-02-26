@@ -9,19 +9,22 @@
 
     if (test.constructor==Array)
     {
-    document.write("This is an Array");
+        document.write("This is an Array");
     }
+
     if (test.constructor==Boolean)
     {
-    document.write("This is a Boolean");
+        document.write("This is a Boolean");
     }
+
     if (test.constructor==Date)
     {
-    document.write("This is a Date");
+        document.write("This is a Date");
     }
+    
     if (test.constructor==String)
     {
-    document.write("This is a String");
+        document.write("This is a String");
     }
     ```
 - length 设置或返回数组中元素的数目。
@@ -185,41 +188,41 @@
 
 ### 方法一
 
-    ``` javascript
-    var arr = [0,2,3,4,4,0,2];
-    var obj = {};
-    var tmp = [];
-    for(var i = 0 ;i< arr.length;i++){
-    if( !obj[arr[i]] ){
-        obj[arr[i]] = 1;
-        tmp.push(arr[i]);
-    }
-    }
-    console.log(tmp); //  [0, 2, 3, 4]
-    ```
+``` javascript
+var arr = [0,2,3,4,4,0,2];
+var obj = {};
+var tmp = [];
+for(var i = 0 ;i< arr.length;i++){
+if( !obj[arr[i]] ){
+    obj[arr[i]] = 1;
+    tmp.push(arr[i]);
+}
+}
+console.log(tmp); //  [0, 2, 3, 4]
+```
 
 ### 方法二
 
-    ``` javascript 
-    var arr = [2,3,4,4,5,2,3,6],
-    arr2 = [];
-    for(var i = 0;i< arr.length;i++){
-        if(arr2.indexOf(arr[i]) < 0){
-            arr2.push(arr[i]);
-        }
+``` javascript 
+var arr = [2,3,4,4,5,2,3,6],
+arr2 = [];
+for(var i = 0;i< arr.length;i++){
+    if(arr2.indexOf(arr[i]) < 0){
+        arr2.push(arr[i]);
     }
-    console.log(arr2); // [2, 3, 4, 5, 6]
-    ```
+}
+console.log(arr2); // [2, 3, 4, 5, 6]
+```
 
 ### 方法三
 
-    ``` javascript 
-    var arr = [2,3,4,4,5,2,3,6];
-    var arr2 = arr.filter(function(element,index,self){
-    return self.indexOf(element) === index;
-    });
-    console.log(arr2); //[2, 3, 4, 5, 6]
-    ```
+``` javascript 
+var arr = [2,3,4,4,5,2,3,6];
+var arr2 = arr.filter(function(element,index,self){
+return self.indexOf(element) === index;
+});
+console.log(arr2); //[2, 3, 4, 5, 6]
+```
 ## 求数组的最值
 
 ### 方法一
@@ -243,22 +246,22 @@
 
 ### 方法二 Array.max = function(arr){} / Array.min = function(arr){}
 
-    ``` javascript 
-    var array = [3,43,23,45,65,90];
+``` javascript 
+var array = [3,43,23,45,65,90];
 
-    Array.max = function( array ){ 
-    return Math.max.apply( Math, array );
-    };
-    Array.min = function( array ){ 
-    return Math.min.apply( Math, array );
-    };
+Array.max = function( array ){ 
+return Math.max.apply( Math, array );
+};
+Array.min = function( array ){ 
+return Math.min.apply( Math, array );
+};
 
-    var max = Array.max(array);
-    console.log(max);  // 90
+var max = Array.max(array);
+console.log(max);  // 90
 
-    var min = Array.min(array);
-    console.log(min);  // 3
-    ```
+var min = Array.min(array);
+console.log(min);  // 3
+```
 
 ### 方法三 Array.prototype.max = function(){};Array.prototype.min = function(){}
 
