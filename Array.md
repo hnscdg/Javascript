@@ -21,12 +21,13 @@
     {
         document.write("This is a Date");
     }
-    
+
     if (test.constructor==String)
     {
         document.write("This is a String");
     }
     ```
+
 - length 设置或返回数组中元素的数目。
 
 - prototype 使您有能力向对象添加属性和方法。
@@ -58,6 +59,7 @@
     console.log(arr2); // 删除的数组的最后一个元素为：5
     console.log(arr);  // 删除元素之后的数组为：[2, 3, 4]
     ```
+
 - shift() 删除并返回数组的第一个元素
 
     ``` javascript
@@ -75,6 +77,7 @@
     console.log(arr2);  // 返回的数组长度：5 
     console.log(arr);  // [2, 3, 4, 5, 6]
     ```
+
 - unshift() 向数组的开头添加一个或更多元素，并返回新的长度。
 
     ``` javascript 
@@ -223,6 +226,7 @@ return self.indexOf(element) === index;
 });
 console.log(arr2); //[2, 3, 4, 5, 6]
 ```
+
 ## 求数组的最值
 
 ### 方法一
@@ -235,6 +239,7 @@ console.log(arr2); //[2, 3, 4, 5, 6]
     console.log(max);
     // 90
     ```
+
 - 求数组最小值：Math.min.apply(null,arr)
 
     ``` javascript
@@ -282,6 +287,7 @@ console.log(min);  // 3
     var max = arr.max();
     console.log(max);  // 90
     ```
+
 - 求数组最小值
 
     ``` javascript
@@ -315,6 +321,7 @@ console.log(min);  // 3
     console.log(arr);
     // [3, 23, 43, 45, 65, 90]
     ```
+
 - 数组由大到小进行排序：sort,sortnum
 
     ``` javascript
@@ -405,6 +412,3 @@ while(arr.length){
 }
 console.log(arr2);
 ```
-
-
-
