@@ -231,6 +231,39 @@ console.log(arr2); //[2, 3, 4, 5, 6]
 
 ### 方法一
 
+说明：Javascript中的Math.max方法可以求出给定参数中最大的数。
+
+```javascript
+> Math.max('1','2','3.1','3.2') //如果参数为字符串，会转为数字
+< 3.2
+> Math.min(1,0,-1) // 如果字符串无法转为数字，返回NaN
+< -1
+```
+
+但如果参数是数组，就不能这样调用了。
+
+此时就用到了apply方法：
+
+```javascript
+apply 方法 (Function) (JavaScript)
+
+调用函数，并用指定对象替换函数的 this 值，同时用指定数组替换函数的参数。
+
+apply([thisObj[,argArray]])
+
+thisObj
+　　可选。 要用作 this 对象的对象。
+argArray
+　　可选。 要传递到函数的一组参数。
+```
+
+```javascript
+> Math.max.apply(null, ['1','2','3.1','3.2'])
+< 3.2
+> Math.min.apply(null, [1,0,-1])
+< -1
+```
+
 - 求数组最大值：Math.max.apply(null,arr);
 
     ``` javascript

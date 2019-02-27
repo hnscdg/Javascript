@@ -61,7 +61,7 @@ student1.sayhi();
 // alert: name:xiaolan,  age:12
 ```
 
-## 混合方法【prototype,call/apply】
+## 混合方法 [prototype,call/apply]
 
 ```javascript
 function teacher(name,age){
